@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atril · Tu atril digital</title>
+<meta name="description" content="Atril guarda tus partituras y te las muestra grandes y claras para tocar. Pedal, setlists y anotaciones, sin internet.">
+<link rel="icon" href="img/icono-64.png">
+<!-- NATESHU: página pública de Atril (GitHub Pages). Solo presentación y privacidad: el código de la app es privado y
+     no está aquí. Sale en español o en inglés según el navegador, y se puede cambiar con los botones de arriba.
+     Los textos van en palabras sencillas, para que los entienda cualquiera desde los 12 años. -->
+<style>
+  :root { color-scheme: light dark; --bg:#fbf8f3; --card:#fffdf9; --text:#241c15; --muted:#6b5d50; --accent:#a8701c;
+    --gold:#e0a13a; --line:#ece2d5; --dark:#1e1712; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141110; --card:#221b16; --text:#f1e9df; --muted:#bcae9f;
+    --accent:#e0a13a; --line:#352a22; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  header { background: var(--card); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
+  header img { width: 36px; height: 36px; border-radius: 9px; }
+  header strong { font-size: 20px; }
+  .spacer { flex: 1; }
+  .langs button { border: 1px solid var(--line); background: var(--card); color: var(--text); border-radius: 8px;
+    padding: 4px 10px; font: inherit; font-size: 14px; cursor: pointer; }
+  .langs button.on { border-color: var(--gold); color: var(--accent); font-weight: 600; }
+  .hero { background: var(--dark); color: #f1e9df; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: center; padding: 48px 16px; }
+  .hero h1 { margin: 0 0 12px; font-size: clamp(30px, 5vw, 46px); line-height: 1.15; }
+  .hero p { margin: 0 0 22px; font-size: 18px; color: #d8cbbd; }
+  .hero img.shot { width: 100%; border-radius: 12px; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 12px; background: var(--gold); color: #241c15;
+    font-weight: 700; text-decoration: none; }
+  .btn small { display: block; font-weight: 400; font-size: 13px; }
+  section { padding: 48px 0 8px; }
+  h2 { font-size: 26px; margin: 0 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 24px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 17px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .shot2 { width: 100%; border-radius: 12px; border: 1px solid var(--line); }
+  footer { margin-top: 56px; padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  @media (max-width: 800px) { .hero .wrap { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
+  [data-lang="en"] .es, [data-lang="es"] .en { display: none; }
+</style>
+</head>
+<body data-lang="es">
+<header><div class="wrap">
+  <img src="img/icono-256.png" alt=""><strong>Atril</strong>
+  <span class="spacer"></span>
+  <span class="langs"><button data-set="es">Español</button> <button data-set="en">English</button></span>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <h1 class="es">Tu atril digital para tocar en vivo</h1>
+    <h1 class="en">Your digital music stand for playing live</h1>
+    <p class="es">Atril guarda tus partituras y te las muestra grandes y claras. Pasas la página con el dedo, con el
+      teclado o con un pedal. Y no necesita internet.</p>
+    <p class="en">Atril keeps your sheet music and shows it big and clear. Turn the page with your finger, the keyboard
+      or a pedal. And it doesn't need the internet.</p>
+    <a class="btn" href="https://apps.microsoft.com/detail/9PJ0QFF1L667">
+      <span class="es">Microsoft Store<small>Para Windows · muy pronto</small></span>
+      <span class="en">Microsoft Store<small>For Windows · coming soon</small></span>
+    </a>
+  </div>
+  <img class="shot es" src="img/escenario-es.jpg" alt="Una partitura de Chopin a pantalla completa en Atril">
+  <img class="shot en" src="img/escenario-en.jpg" alt="A Chopin score full screen in Atril">
+</div></div>
+
+<main class="wrap">
+<section>
+  <h2 class="es">Lo que puedes hacer</h2>
+  <h2 class="en">What you can do</h2>
+  <p class="lead es">Todo lo que necesitas para ensayar y tocar, sin enredos.</p>
+  <p class="lead en">Everything you need to practice and play, without the fuss.</p>
+  <div class="grid">
+    <div class="card"><h3 class="es">Trae tus partituras</h3><h3 class="en">Bring your scores</h3>
+      <p class="es">PDF, fotos de partituras o canciones con acordes. Una por una o una carpeta entera.</p>
+      <p class="en">PDFs, photos of sheet music or songs with chords. One at a time or a whole folder.</p></div>
+    <div class="card"><h3 class="es">Pasa la página sin soltar el instrumento</h3><h3 class="en">Turn the page hands-free</h3>
+      <p class="es">Con un pedal Bluetooth que funcione como teclado. También con el dedo o las flechas.</p>
+      <p class="en">With a Bluetooth pedal that works like a keyboard. Or with your finger or the arrow keys.</p></div>
+    <div class="card"><h3 class="es">Setlists</h3><h3 class="en">Setlists</h3>
+      <p class="es">Arma la lista de cada presentación y ponla en el orden que quieras.</p>
+      <p class="en">Make a list for each gig and put it in any order you like.</p></div>
+    <div class="card"><h3 class="es">Escribe encima</h3><h3 class="en">Write on top</h3>
+      <p class="es">Lápiz, resaltador, texto y sellos. Tu PDF original nunca se daña.</p>
+      <p class="en">Pen, highlighter, text and stamps. Your original PDF is never changed.</p></div>
+    <div class="card"><h3 class="es">Ensaya</h3><h3 class="en">Practice</h3>
+      <p class="es">Metrónomo, pista de audio de cada obra y cambio de sonido en tu teclado por MIDI.</p>
+      <p class="en">Metronome, an audio track for each song and sound changes on your keyboard over MIDI.</p></div>
+    <div class="card"><h3 class="es">En 9 idiomas</h3><h3 class="en">In 9 languages</h3>
+      <p class="es">Español, inglés, portugués, francés, alemán, italiano, japonés, chino y coreano.</p>
+      <p class="en">Spanish, English, Portuguese, French, German, Italian, Japanese, Chinese and Korean.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="es">Gratis para empezar</h2>
+  <h2 class="en">Free to start</h2>
+  <p class="lead es">Atril gratis trae todas las opciones y deja tener hasta 15 obras. Con «Atril completo» tienes todas
+    las que quieras, con una sola compra. No es una suscripción. Lo que ya tienes nunca se bloquea.</p>
+  <p class="lead en">Atril Free has every feature and holds up to 15 songs. With "Atril Full" you can have as many as you
+    want, with a single purchase. It's not a subscription. What you already have is never locked.</p>
+  <img class="shot2 es" src="img/biblioteca-es.jpg" alt="La biblioteca de Atril con partituras de Bach, Satie y Chopin">
+  <img class="shot2 en" src="img/biblioteca-en.jpg" alt="Atril's library with scores by Bach, Satie and Chopin">
+</section>
+</main>
+
+<footer><div class="wrap">
+  <p><a href="privacidad.html"><span class="es">Privacidad</span><span class="en">Privacy</span></a> ·
+    <a href="mailto:nateshu@yahoo.com.co">nateshu@yahoo.com.co</a></p>
+  <p class="es">Las partituras de las imágenes son de dominio público, del proyecto Mutopia.</p>
+  <p class="en">The scores in the pictures are public domain, from the Mutopia Project.</p>
+  <p>© 2026 Natesoft · ALVARO NATES HUERTAS. <span class="es">Todos los derechos reservados.</span><span class="en">All rights reserved.</span></p>
+</div></footer>
+
+<script>
+  // NATESHU: escoge el idioma: el que se guardó con los botones, o el del navegador (español si empieza por «es»).
+  var saved = null;
+  try { saved = localStorage.getItem('atril.lang'); } catch (e) {}
+  var lang = saved || ((navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+  function setLang(l) {
+    document.body.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+    document.querySelectorAll('.langs button').forEach(function (b) { b.classList.toggle('on', b.dataset.set === l); });
+    try { localStorage.setItem('atril.lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('.langs button').forEach(function (b) { b.onclick = function () { setLang(b.dataset.set); }; });
+  setLang(lang);
+</script>
+</body>
+</html>
